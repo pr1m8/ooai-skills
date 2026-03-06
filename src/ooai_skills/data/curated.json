@@ -1,0 +1,272 @@
+[
+  {
+    "category": "Ecosystem foundations",
+    "description": "The `npx skills` CLI.",
+    "kind": "tooling",
+    "repo": "vercel-labs/skills"
+  },
+  {
+    "category": "Ecosystem foundations",
+    "description": "Agent Skills spec/docs.",
+    "kind": "spec",
+    "repo": "agentskills/agentskills"
+  },
+  {
+    "category": "Ecosystem foundations",
+    "description": "Lockfile/symlink manager for skills.",
+    "kind": "tooling",
+    "repo": "getsentry/dotagents"
+  },
+  {
+    "category": "Ecosystem foundations",
+    "description": "Discovery RFC.",
+    "kind": "spec",
+    "repo": "cloudflare/agent-skills-discovery-rfc"
+  },
+  {
+    "category": "Deep Agents and LangChain ecosystem",
+    "description": "Deep Agents harness.",
+    "kind": "tooling",
+    "repo": "langchain-ai/deepagents"
+  },
+  {
+    "category": "Deep Agents and LangChain ecosystem",
+    "description": "Deep Agents UI.",
+    "kind": "tooling",
+    "repo": "langchain-ai/deep-agents-ui"
+  },
+  {
+    "category": "Deep Agents and LangChain ecosystem",
+    "description": "Deep Agents JS.",
+    "kind": "tooling",
+    "repo": "langchain-ai/deepagentsjs"
+  },
+  {
+    "category": "Deep Agents and LangChain ecosystem",
+    "description": "Deep Agents curriculum.",
+    "kind": "examples",
+    "repo": "langchain-ai/deep-agents-from-scratch"
+  },
+  {
+    "category": "Deep Agents and LangChain ecosystem",
+    "description": "LangChain skill pack.",
+    "kind": "skills",
+    "repo": "langchain-ai/langchain-skills"
+  },
+  {
+    "category": "Deep Agents and LangChain ecosystem",
+    "description": "LangSmith skill pack.",
+    "kind": "skills",
+    "repo": "langchain-ai/langsmith-skills"
+  },
+  {
+    "category": "Core general skill catalogs",
+    "description": "OpenAI/Codex skills catalog.",
+    "kind": "skills",
+    "repo": "openai/skills"
+  },
+  {
+    "category": "Core general skill catalogs",
+    "description": "Anthropic skills catalog.",
+    "kind": "skills",
+    "repo": "anthropics/skills"
+  },
+  {
+    "category": "Web / frontend / DX packs",
+    "description": "Web-dev skill pack.",
+    "kind": "skills",
+    "repo": "vercel-labs/agent-skills"
+  },
+  {
+    "category": "Web / frontend / DX packs",
+    "description": "Vercel ecosystem skills.",
+    "kind": "skills",
+    "repo": "vercel-labs/vercel-skills"
+  },
+  {
+    "category": "Web / frontend / DX packs",
+    "description": "Netlify context/tools.",
+    "kind": "skills",
+    "repo": "netlify/context-and-tools"
+  },
+  {
+    "category": "Web / frontend / DX packs",
+    "description": "Streamlit skills.",
+    "kind": "skills",
+    "repo": "streamlit/agent-skills"
+  },
+  {
+    "category": "Cloud / infra platform packs",
+    "description": "Microsoft/Azure skills.",
+    "kind": "skills",
+    "repo": "microsoft/skills"
+  },
+  {
+    "category": "Cloud / infra platform packs",
+    "description": "Cloudflare skills.",
+    "kind": "skills",
+    "repo": "cloudflare/skills"
+  },
+  {
+    "category": "Cloud / infra platform packs",
+    "description": "HashiCorp skills.",
+    "kind": "skills",
+    "repo": "hashicorp/agent-skills"
+  },
+  {
+    "category": "Cloud / infra platform packs",
+    "description": "React Native skills.",
+    "kind": "skills",
+    "repo": "callstackincubator/agent-skills"
+  },
+  {
+    "category": "Databases / data platforms",
+    "description": "Supabase skills.",
+    "kind": "skills",
+    "repo": "supabase/agent-skills"
+  },
+  {
+    "category": "Databases / data platforms",
+    "description": "Neon skills.",
+    "kind": "skills",
+    "repo": "neondatabase/agent-skills"
+  },
+  {
+    "category": "Databases / data platforms",
+    "description": "Tinybird skills.",
+    "kind": "skills",
+    "repo": "tinybirdco/tinybird-agent-skills"
+  },
+  {
+    "category": "ML / AI / model ecosystem packs",
+    "description": "HuggingFace skills.",
+    "kind": "skills",
+    "repo": "huggingface/skills"
+  },
+  {
+    "category": "ML / AI / model ecosystem packs",
+    "description": "Skills generation/eval tooling.",
+    "kind": "tooling",
+    "repo": "huggingface/upskill"
+  },
+  {
+    "category": "ML / AI / model ecosystem packs",
+    "description": "Gemini skills.",
+    "kind": "skills",
+    "repo": "google-gemini/gemini-skills"
+  },
+  {
+    "category": "ML / AI / model ecosystem packs",
+    "description": "Jules skills.",
+    "kind": "skills",
+    "repo": "google-labs-code/jules-skills"
+  },
+  {
+    "category": "ML / AI / model ecosystem packs",
+    "description": "Stitch skills.",
+    "kind": "skills",
+    "repo": "google-labs-code/stitch-skills"
+  },
+  {
+    "category": "Observability / debugging",
+    "description": "Sentry team skills.",
+    "kind": "skills",
+    "repo": "getsentry/skills"
+  },
+  {
+    "category": "Observability / debugging",
+    "description": "Sentry user skills.",
+    "kind": "skills",
+    "repo": "getsentry/sentry-agent-skills"
+  },
+  {
+    "category": "Security-focused packs",
+    "description": "Trail of Bits skills.",
+    "kind": "skills",
+    "repo": "trailofbits/skills"
+  },
+  {
+    "category": "Security-focused packs",
+    "description": "Curated/reviewed skills.",
+    "kind": "skills",
+    "repo": "trailofbits/skills-curated"
+  },
+  {
+    "category": "Security-focused packs",
+    "description": "Config/workflows patterns.",
+    "kind": "tooling",
+    "repo": "trailofbits/claude-code-config"
+  },
+  {
+    "category": "App framework vendor packs",
+    "description": "Expo skills.",
+    "kind": "skills",
+    "repo": "expo/skills"
+  },
+  {
+    "category": "App framework vendor packs",
+    "description": "Auth0 skills.",
+    "kind": "skills",
+    "repo": "auth0/agent-skills"
+  },
+  {
+    "category": "App framework vendor packs",
+    "description": "WordPress/Automattic skills.",
+    "kind": "skills",
+    "repo": "Automattic/agent-skills"
+  },
+  {
+    "category": "Community mega-packs",
+    "description": "Large community pack.",
+    "kind": "skills",
+    "repo": "phrazzld/agent-skills"
+  },
+  {
+    "category": "Community mega-packs",
+    "description": "Plugin ecosystem.",
+    "kind": "skills",
+    "repo": "wshobson/agents"
+  },
+  {
+    "category": "Community mega-packs",
+    "description": "Context engineering pack.",
+    "kind": "skills",
+    "repo": "muratcankoylan/Agent-Skills-for-Context-Engineering"
+  },
+  {
+    "category": "Community mega-packs",
+    "description": "Curated community set.",
+    "kind": "skills",
+    "repo": "hoodini/ai-agents-skills"
+  },
+  {
+    "category": "Community mega-packs",
+    "description": "Very large bundle (gate it).",
+    "kind": "skills",
+    "repo": "sickn33/antigravity-awesome-skills"
+  },
+  {
+    "category": "Directories",
+    "description": "Awesome list.",
+    "kind": "directory",
+    "repo": "VoltAgent/awesome-agent-skills"
+  },
+  {
+    "category": "Directories",
+    "description": "Awesome list.",
+    "kind": "directory",
+    "repo": "heilcheng/awesome-agent-skills"
+  },
+  {
+    "category": "Directories",
+    "description": "Awesome list.",
+    "kind": "directory",
+    "repo": "libukai/awesome-agent-skills"
+  },
+  {
+    "category": "Directories",
+    "description": "Discovery tooling.",
+    "kind": "directory",
+    "repo": "dmgrok/agent_skills_directory"
+  }
+]

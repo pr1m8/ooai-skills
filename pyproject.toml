@@ -1,0 +1,30 @@
+[project]
+name = "ooai-skills"
+version = "0.1.0"
+description = "Complete MinIO skills registry + curated ingestion + local browsing."
+readme = "README.md"
+requires-python = ">=3.13"
+authors = [{name="William R. Astley"}]
+license = {text="MIT"}
+dependencies = [
+  "pydantic>=2.7",
+  "pydantic-settings>=2.2",
+  "typer>=0.12",
+  "rich>=13.7",
+  "PyYAML>=6.0.1",
+  "minio>=7.2.8",
+  "requests>=2.32"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.6"]
+
+[project.scripts]
+ooai-skills = "ooai_skills.cli:app"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
