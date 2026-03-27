@@ -1,11 +1,25 @@
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
 [project]
 name = "ooai-skills"
 version = "0.1.0"
-description = "Complete MinIO skills registry + curated ingestion + local browsing."
+description = "Multi-agent skills registry: ingest, cache, and distribute SKILL.md skills across Claude Code, Deep Agents, Codex, Cursor, Copilot, Gemini, and more."
 readme = "README.md"
 requires-python = ">=3.13"
 authors = [{name="William R. Astley"}]
 license = {text="MIT"}
+keywords = ["agent-skills", "claude-code", "mcp", "ai-agents", "skills-registry"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Libraries",
+]
 dependencies = [
   "pydantic>=2.7",
   "pydantic-settings>=2.2",
@@ -13,14 +27,32 @@ dependencies = [
   "rich>=13.7",
   "PyYAML>=6.0.1",
   "minio>=7.2.8",
-  "requests>=2.32"
+  "requests>=2.32",
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8.0", "ruff>=0.6"]
+dev = [
+  "pytest>=9.0.2",
+  "ruff>=0.15.8",
+]
+docs = [
+  "sphinx>=8.0",
+  "furo>=2024.8",
+  "myst-parser>=4.0",
+  "sphinx-autodoc-typehints>=2.2",
+  "sphinx-copybutton>=0.5",
+  "sphinx-design>=0.6",
+  "sphinxcontrib-mermaid>=1.0",
+  "sphinx-autoapi>=3.3",
+]
+
+[project.urls]
+Repository = "https://github.com/ooai/tools/ooai-skills"
+Documentation = "https://github.com/ooai/tools/ooai-skills/tree/main/docs"
 
 [project.scripts]
 ooai-skills = "ooai_skills.cli:app"
+ooai-skills-mcp = "ooai_skills.mcp_server:main"
 
 [tool.ruff]
 line-length = 100

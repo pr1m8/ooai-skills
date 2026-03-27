@@ -1,6 +1,16 @@
 .venv/
 __pycache__/
-.env
 *.pyc
+*.pyo
+.env
 .pytest_cache/
 .mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+.eggs/
+.pdm-build/
+.pdm-python
+CLAUDE.local.md
+.claude/settings.local.json

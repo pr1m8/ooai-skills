@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import UTC, datetime
 from typing import Any, Literal
 
 from pydantic import BaseModel, Field, field_validator
@@ -32,16 +32,16 @@ class SkillRecord(BaseModel):
     content_hash: str
     s3_prefix: str
     frontmatter: dict[str, Any] = Field(default_factory=dict)
-    discovered_at: str = Field(default_factory=lambda: datetime.utcnow().isoformat(timespec="seconds") + "Z")
+    discovered_at: str = Field(default_factory=lambda: datetime.now(UTC).isoformat(timespec="seconds").replace("+00:00", "Z"))
 
 
 class SkillIndex(BaseModel):
-    generated_at: str = Field(default_factory=lambda: datetime.utcnow().isoformat(timespec="seconds") + "Z")
+    generated_at: str = Field(default_factory=lambda: datetime.now(UTC).isoformat(timespec="seconds").replace("+00:00", "Z"))
     skills: list[SkillRecord] = Field(default_factory=list)
 
 
 class SourceIndex(BaseModel):
-    generated_at: str = Field(default_factory=lambda: datetime.utcnow().isoformat(timespec="seconds") + "Z")
+    generated_at: str = Field(default_factory=lambda: datetime.now(UTC).isoformat(timespec="seconds").replace("+00:00", "Z"))
     sources: dict[str, str] = Field(default_factory=dict)
     meta: dict[str, Any] = Field(default_factory=dict)
 
@@ -55,7 +55,7 @@ class LintIssue(BaseModel):
 
 
 class LintIndex(BaseModel):
-    generated_at: str = Field(default_factory=lambda: datetime.utcnow().isoformat(timespec="seconds") + "Z")
+    generated_at: str = Field(default_factory=lambda: datetime.now(UTC).isoformat(timespec="seconds").replace("+00:00", "Z"))
     issues: list[LintIssue] = Field(default_factory=list)
 
 

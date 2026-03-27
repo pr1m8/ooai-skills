@@ -40,6 +40,9 @@ def _default_endpoint() -> str:
     return f"http://localhost:{port}"
 
 
+_DEFAULT_EXTRA_TARGETS = [str(Path.home() / ".claude" / "skills")]
+
+
 class OoaiSkillsSettings(BaseSettings):
     """Configuration for MinIO + local cache.
 
@@ -121,13 +124,20 @@ class OoaiSkillsSettings(BaseSettings):
 
     local_packs_dir: Path = Field(
         default_factory=lambda: _expand_path("~/.agents/skillpacks"),
+        validation_alias=AliasChoices("OOAI_SKILLS_LOCAL_PACKS_DIR", "OOAI_SKILLS_LOCAL_PACKS"),
     )
     local_skills_dir: Path = Field(
         default_factory=lambda: _expand_path("~/.agents/skills"),
+        validation_alias=AliasChoices("OOAI_SKILLS_LOCAL_SKILLS_DIR", "OOAI_SKILLS_LOCAL_SKILLS"),
     )
     work_dir: Path = Field(
         default_factory=lambda: _expand_path("~/.cache/ooai-skills"),
+        validation_alias=AliasChoices("OOAI_SKILLS_WORK_DIR"),
     )
+
+    # Extra directories to also receive the flattened skill view (e.g. ~/.claude/skills).
+    # Set OOAI_SKILLS_EXTRA_TARGETS as a comma-separated string of paths, or leave default.
+    extra_targets: str = Field(default=",".join(_DEFAULT_EXTRA_TARGETS))
 
     @field_validator("s3_endpoint", mode="before")
     @classmethod
@@ -136,3 +146,13 @@ class OoaiSkillsSettings(BaseSettings):
         if isinstance(v, str) and v and not v.startswith(("http://", "https://")):
             return f"http://{v}"
         return v
+
+    @property
+    def extra_targets_list(self) -> list[str]:
+        """Parse the comma-separated extra_targets string into a list."""
+        return [p.strip() for p in self.extra_targets.split(",") if p.strip()]
+
+    @property
+    def resolved_extra_targets(self) -> list[Path]:
+        """Return extra target paths with ~ expanded."""
+        return [Path(p).expanduser() for p in self.extra_targets_list]

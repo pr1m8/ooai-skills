@@ -35,9 +35,11 @@ def iter_local_skills(root: Path) -> Iterable[LocalSkill]:
 
 def find_local_skills(root: Path, pattern: str) -> list[LocalSkill]:
     p = pattern.strip().lower()
-    return [sk for sk in iter_local_skills(root) if p in f"{sk.name}
-{sk.description}
-{sk.folder_name}".lower()]
+    return [
+        sk
+        for sk in iter_local_skills(root)
+        if p in f"{sk.name}\n{sk.description}\n{sk.folder_name}".lower()
+    ]
 
 
 def resolve_local_skill(root: Path, query: str) -> LocalSkill | None:

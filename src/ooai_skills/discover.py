@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import fnmatch
+import re
 from pathlib import Path
 from typing import Any
 
@@ -62,12 +63,85 @@ def _match_globs(rel_dir: str, include: list[str], exclude: list[str]) -> bool:
     return True
 
 
+_KNOWN_FRONTMATTER_KEYS = {
+    # Base SKILL.md standard (agentskills.io)
+    "name", "description", "license", "compatibility", "metadata", "allowed-tools",
+    # Claude Code extensions
+    "disable-model-invocation", "user-invocable", "context", "agent", "effort",
+    "model", "shell", "hooks", "argument-hint", "paths",
+}
+
+_TOKEN_BUDGET = 5000
+_APPROX_CHARS_PER_TOKEN = 4
+_NAME_RE = re.compile(r"^[a-z0-9]([a-z0-9-]{0,62}[a-z0-9])?$")
+
+
 def _lint(skill_id: str, skill_md: Path, fm: dict[str, Any]) -> list[LintIssue]:
     out: list[LintIssue] = []
-    if "name" not in fm:
-        out.append(LintIssue(skill_id=skill_id, severity="warning", code="FM001", message="Missing frontmatter name.", path="SKILL.md"))
+    skill_dir = skill_md.parent
+    name = str(fm.get("name", "")).strip()
+    desc = str(fm.get("description", "")).strip()
+
+    # FM001/FM002: missing fields
+    if not name:
+        out.append(LintIssue(
+            skill_id=skill_id, severity="warning", code="FM001",
+            message="Missing frontmatter name.", path="SKILL.md",
+        ))
     if "description" not in fm:
-        out.append(LintIssue(skill_id=skill_id, severity="warning", code="FM002", message="Missing frontmatter description.", path="SKILL.md"))
-    if skill_md.stat().st_size > 10 * 1024 * 1024:
-        out.append(LintIssue(skill_id=skill_id, severity="error", code="SZ001", message="SKILL.md exceeds 10MB.", path="SKILL.md"))
+        out.append(LintIssue(
+            skill_id=skill_id, severity="warning", code="FM002",
+            message="Missing frontmatter description.", path="SKILL.md",
+        ))
+
+    # SZ001: file size
+    file_size = skill_md.stat().st_size
+    if file_size > 10 * 1024 * 1024:
+        out.append(LintIssue(
+            skill_id=skill_id, severity="error", code="SZ001",
+            message="SKILL.md exceeds 10MB.", path="SKILL.md",
+        ))
+
+    # TK001: body exceeds recommended token budget
+    approx_tokens = file_size // _APPROX_CHARS_PER_TOKEN
+    if approx_tokens > _TOKEN_BUDGET:
+        out.append(LintIssue(
+            skill_id=skill_id, severity="warning", code="TK001",
+            message=f"SKILL.md body ~{approx_tokens} tokens exceeds {_TOKEN_BUDGET} recommended.",
+            path="SKILL.md",
+        ))
+
+    # EXT001: unknown frontmatter keys
+    unknown = set(fm.keys()) - _KNOWN_FRONTMATTER_KEYS
+    if unknown:
+        out.append(LintIssue(
+            skill_id=skill_id, severity="warning", code="EXT001",
+            message=f"Unknown frontmatter keys: {', '.join(sorted(unknown))}",
+            path="SKILL.md",
+        ))
+
+    # NM001: name format (1-64 chars, lowercase + hyphens)
+    if name and not _NAME_RE.match(name):
+        out.append(LintIssue(
+            skill_id=skill_id, severity="warning", code="NM001",
+            message=f"Name '{name}' must be 1-64 chars, lowercase alphanumeric + hyphens.",
+            path="SKILL.md",
+        ))
+
+    # NM002: name must match directory name
+    if name and name != skill_dir.name:
+        out.append(LintIssue(
+            skill_id=skill_id, severity="warning", code="NM002",
+            message=f"Name '{name}' does not match directory '{skill_dir.name}'.",
+            path="SKILL.md",
+        ))
+
+    # DESC001: description length
+    if desc and len(desc) > 1024:
+        out.append(LintIssue(
+            skill_id=skill_id, severity="warning", code="DESC001",
+            message=f"Description is {len(desc)} chars, exceeds 1024 max.",
+            path="SKILL.md",
+        ))
+
     return out

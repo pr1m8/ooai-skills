@@ -24,6 +24,25 @@
     "repo": "cloudflare/agent-skills-discovery-rfc"
   },
   {
+    "category": "Ecosystem foundations",
+    "description": "Multi-agent rules manager (Cursor, Claude, Copilot, Gemini, Windsurf).",
+    "kind": "tooling",
+    "repo": "block/ai-rules"
+  },
+  {
+    "category": "Ecosystem foundations",
+    "description": "Consistent instructions across Copilot, Cursor, Claude, Windsurf.",
+    "kind": "tooling",
+    "repo": "botingw/rulebook-ai"
+  },
+  {
+    "category": "Ecosystem foundations",
+    "description": "Single source of truth rules for all coding agents.",
+    "kind": "tooling",
+    "repo": "intellectronica/ruler"
+  },
+
+  {
     "category": "Deep Agents and LangChain ecosystem",
     "description": "Deep Agents harness.",
     "kind": "tooling",
@@ -60,20 +79,52 @@
     "repo": "langchain-ai/langsmith-skills"
   },
   {
+    "category": "Deep Agents and LangChain ecosystem",
+    "description": "9 production-ready LangChain skills.",
+    "kind": "skills",
+    "repo": "Lubu-Labs/langchain-agent-skills"
+  },
+
+  {
     "category": "Core general skill catalogs",
-    "description": "OpenAI/Codex skills catalog.",
+    "description": "OpenAI/Codex skills catalog (100+).",
     "kind": "skills",
     "repo": "openai/skills"
   },
   {
     "category": "Core general skill catalogs",
-    "description": "Anthropic skills catalog.",
+    "description": "Anthropic skills catalog (25+).",
     "kind": "skills",
     "repo": "anthropics/skills"
   },
   {
+    "category": "Core general skill catalogs",
+    "description": "Microsoft skills (126 total).",
+    "kind": "skills",
+    "repo": "microsoft/skills"
+  },
+  {
+    "category": "Core general skill catalogs",
+    "description": "Microsoft Azure agent plugin with skills + MCP.",
+    "kind": "skills",
+    "repo": "microsoft/azure-skills"
+  },
+  {
+    "category": "Core general skill catalogs",
+    "description": "Microsoft Learn Agent Skills for Azure.",
+    "kind": "skills",
+    "repo": "MicrosoftDocs/Agent-Skills"
+  },
+  {
+    "category": "Core general skill catalogs",
+    "description": "Security-validated skill registry (200+).",
+    "kind": "skills",
+    "repo": "tech-leads-club/agent-skills"
+  },
+
+  {
     "category": "Web / frontend / DX packs",
-    "description": "Web-dev skill pack.",
+    "description": "Web-dev skill pack (40+).",
     "kind": "skills",
     "repo": "vercel-labs/agent-skills"
   },
@@ -85,7 +136,7 @@
   },
   {
     "category": "Web / frontend / DX packs",
-    "description": "Netlify context/tools.",
+    "description": "Netlify context/tools (21 skills).",
     "kind": "skills",
     "repo": "netlify/context-and-tools"
   },
@@ -96,14 +147,15 @@
     "repo": "streamlit/agent-skills"
   },
   {
-    "category": "Cloud / infra platform packs",
-    "description": "Microsoft/Azure skills.",
+    "category": "Web / frontend / DX packs",
+    "description": "Stripe AI toolkit for payments.",
     "kind": "skills",
-    "repo": "microsoft/skills"
+    "repo": "stripe/ai"
   },
+
   {
     "category": "Cloud / infra platform packs",
-    "description": "Cloudflare skills.",
+    "description": "Cloudflare skills (Workers, DO, MCP).",
     "kind": "skills",
     "repo": "cloudflare/skills"
   },
@@ -115,13 +167,14 @@
   },
   {
     "category": "Cloud / infra platform packs",
-    "description": "React Native skills.",
+    "description": "React Native skills (27).",
     "kind": "skills",
     "repo": "callstackincubator/agent-skills"
   },
+
   {
     "category": "Databases / data platforms",
-    "description": "Supabase skills.",
+    "description": "Supabase skills (Postgres, auth, realtime).",
     "kind": "skills",
     "repo": "supabase/agent-skills"
   },
@@ -137,9 +190,10 @@
     "kind": "skills",
     "repo": "tinybirdco/tinybird-agent-skills"
   },
+
   {
     "category": "ML / AI / model ecosystem packs",
-    "description": "HuggingFace skills.",
+    "description": "HuggingFace skills (15+).",
     "kind": "skills",
     "repo": "huggingface/skills"
   },
@@ -168,6 +222,13 @@
     "repo": "google-labs-code/stitch-skills"
   },
   {
+    "category": "ML / AI / model ecosystem packs",
+    "description": "AI research and engineering skills (50+).",
+    "kind": "skills",
+    "repo": "Orchestra-Research/AI-Research-SKILLs"
+  },
+
+  {
     "category": "Observability / debugging",
     "description": "Sentry team skills.",
     "kind": "skills",
@@ -179,6 +240,7 @@
     "kind": "skills",
     "repo": "getsentry/sentry-agent-skills"
   },
+
   {
     "category": "Security-focused packs",
     "description": "Trail of Bits skills.",
@@ -197,9 +259,10 @@
     "kind": "tooling",
     "repo": "trailofbits/claude-code-config"
   },
+
   {
     "category": "App framework vendor packs",
-    "description": "Expo skills.",
+    "description": "Expo skills (20+).",
     "kind": "skills",
     "repo": "expo/skills"
   },
@@ -215,6 +278,25 @@
     "kind": "skills",
     "repo": "Automattic/agent-skills"
   },
+  {
+    "category": "App framework vendor packs",
+    "description": "Continue IDE skills.",
+    "kind": "skills",
+    "repo": "continuedev/skills"
+  },
+  {
+    "category": "App framework vendor packs",
+    "description": "Roo Code skills.",
+    "kind": "skills",
+    "repo": "Kastalien-Research/rooskills"
+  },
+  {
+    "category": "App framework vendor packs",
+    "description": "Vue/Vite/Nuxt skills (antfu).",
+    "kind": "skills",
+    "repo": "antfu/skills"
+  },
+
   {
     "category": "Community mega-packs",
     "description": "Large community pack.",
@@ -235,25 +317,181 @@
   },
   {
     "category": "Community mega-packs",
-    "description": "Curated community set.",
+    "description": "Curated community set (Claude, Copilot, Cursor, Windsurf).",
     "kind": "skills",
     "repo": "hoodini/ai-agents-skills"
   },
   {
     "category": "Community mega-packs",
-    "description": "Very large bundle (gate it).",
+    "description": "Very large bundle (1304+ skills).",
     "kind": "skills",
     "repo": "sickn33/antigravity-awesome-skills"
   },
   {
+    "category": "Community mega-packs",
+    "description": "192+ Claude Code skills and agent plugins.",
+    "kind": "skills",
+    "repo": "alirezarezvani/claude-skills"
+  },
+  {
+    "category": "Community mega-packs",
+    "description": "Community reusable AI agent skills (80+).",
+    "kind": "skills",
+    "repo": "Notysoty/openagentskills"
+  },
+  {
+    "category": "Community mega-packs",
+    "description": "OK-skills: multi-agent playbooks (100+).",
+    "kind": "skills",
+    "repo": "mxyhi/ok-skills"
+  },
+  {
+    "category": "Community mega-packs",
+    "description": "300+ Antigravity skills.",
+    "kind": "skills",
+    "repo": "rmyndharis/antigravity-skills"
+  },
+
+  {
+    "category": "Cursor rules",
+    "description": "100+ .cursorrules for many frameworks.",
+    "kind": "rules",
+    "repo": "PatrickJS/awesome-cursorrules"
+  },
+  {
+    "category": "Cursor rules",
+    "description": "879+ .mdc cursor rule files.",
+    "kind": "rules",
+    "repo": "sanjeed5/awesome-cursor-rules-mdc"
+  },
+  {
+    "category": "Cursor rules",
+    "description": "Rules for Cursor, Windsurf, VS Code, Copilot (Next.js/React).",
+    "kind": "rules",
+    "repo": "blefnk/awesome-cursor-rules"
+  },
+  {
+    "category": "Cursor rules",
+    "description": "39+ ready-to-use .cursorrules files.",
+    "kind": "rules",
+    "repo": "survivorforge/cursor-rules"
+  },
+  {
+    "category": "Cursor rules",
+    "description": "Cursor Agent Composer rules library.",
+    "kind": "rules",
+    "repo": "sparesparrow/cursor-rules"
+  },
+  {
+    "category": "Cursor rules",
+    "description": "Java Enterprise cursor rules.",
+    "kind": "rules",
+    "repo": "jabrena/cursor-rules-java"
+  },
+
+  {
+    "category": "Windsurf rules",
+    "description": "Curated .windsurfrules and global_rules.md files.",
+    "kind": "rules",
+    "repo": "SchneiderSam/awesome-windsurfrules"
+  },
+  {
+    "category": "Windsurf rules",
+    "description": "Windsurf rules collection.",
+    "kind": "rules",
+    "repo": "balqaasem/awesome-windsurfrules"
+  },
+  {
+    "category": "Windsurf rules",
+    "description": "Windsurf resources, rules, and memories.",
+    "kind": "rules",
+    "repo": "ichoosetoaccept/awesome-windsurf"
+  },
+
+  {
+    "category": "Copilot instructions",
+    "description": "Official awesome-copilot (175+ agents, 208+ skills, 176+ instructions).",
+    "kind": "directory",
+    "repo": "github/awesome-copilot"
+  },
+  {
+    "category": "Copilot instructions",
+    "description": "Copilot instructions, prompts, AGENTS.md files.",
+    "kind": "rules",
+    "repo": "Code-and-Sorts/awesome-copilot-agents"
+  },
+
+  {
+    "category": "Cross-agent coding rules",
+    "description": "Provider-agnostic coding rules and standards.",
+    "kind": "rules",
+    "repo": "deb-sahu/ai-rules-hub"
+  },
+  {
+    "category": "Cross-agent coding rules",
+    "description": "Production-ready agentic coding rulebook for all IDEs.",
+    "kind": "rules",
+    "repo": "obviousworks/agentic-coding-rulebook"
+  },
+  {
+    "category": "Cross-agent coding rules",
+    "description": "Example rules for Cursor, Claude, and AI assistants.",
+    "kind": "rules",
+    "repo": "jsonallen/example-ai-coding-rules"
+  },
+  {
+    "category": "Cross-agent coding rules",
+    "description": "Continue.dev useful rules collection (60+).",
+    "kind": "rules",
+    "repo": "continuedev/awesome-rules"
+  },
+
+  {
+    "category": "Claude Code resources",
+    "description": "135 agents, 35 skills, 42 commands, 150+ plugins.",
+    "kind": "directory",
+    "repo": "rohitg00/awesome-claude-code-toolkit"
+  },
+  {
+    "category": "Claude Code resources",
+    "description": "Skills, hooks, commands, applications for Claude Code.",
+    "kind": "directory",
+    "repo": "hesreallyhim/awesome-claude-code"
+  },
+  {
+    "category": "Claude Code resources",
+    "description": "Claude Skills, resources, and tools.",
+    "kind": "directory",
+    "repo": "travisvn/awesome-claude-skills"
+  },
+  {
+    "category": "Claude Code resources",
+    "description": "50+ verified Claude Skills (TDD, debugging, git).",
+    "kind": "skills",
+    "repo": "karanb192/awesome-claude-skills"
+  },
+  {
+    "category": "Claude Code resources",
+    "description": "Claude Skills (AWS CDK, MCP Builder, prompt engineering).",
+    "kind": "skills",
+    "repo": "ComposioHQ/awesome-claude-skills"
+  },
+  {
+    "category": "Claude Code resources",
+    "description": "Workflow to reusable AI agent skill converter.",
+    "kind": "tooling",
+    "repo": "FrancyJGLisboa/agent-skill-creator"
+  },
+
+  {
     "category": "Directories",
-    "description": "Awesome list.",
+    "description": "Largest awesome list (1000+ skills).",
     "kind": "directory",
     "repo": "VoltAgent/awesome-agent-skills"
   },
   {
     "category": "Directories",
-    "description": "Awesome list.",
+    "description": "Skills, tools, tutorials directory.",
     "kind": "directory",
     "repo": "heilcheng/awesome-agent-skills"
   },
@@ -265,8 +503,57 @@
   },
   {
     "category": "Directories",
+    "description": "Modular skills via progressive disclosure.",
+    "kind": "directory",
+    "repo": "skillmatic-ai/awesome-agent-skills"
+  },
+  {
+    "category": "Directories",
+    "description": "Skills for Claude, Codex, Gemini, Copilot.",
+    "kind": "directory",
+    "repo": "gmh5225/awesome-skills"
+  },
+  {
+    "category": "Directories",
+    "description": "Skills for all major agents.",
+    "kind": "directory",
+    "repo": "CommandCodeAI/agent-skills"
+  },
+  {
+    "category": "Directories",
+    "description": "Skills for Claude, Codex, Cursor.",
+    "kind": "directory",
+    "repo": "kodustech/awesome-agent-skills"
+  },
+  {
+    "category": "Directories",
     "description": "Discovery tooling.",
     "kind": "directory",
     "repo": "dmgrok/agent_skills_directory"
+  },
+
+  {
+    "category": "MCP servers",
+    "description": "Curated MCP server list (300+).",
+    "kind": "directory",
+    "repo": "wong2/awesome-mcp-servers"
+  },
+  {
+    "category": "MCP servers",
+    "description": "Comprehensive MCP server list (400+).",
+    "kind": "directory",
+    "repo": "appcypher/awesome-mcp-servers"
+  },
+  {
+    "category": "MCP servers",
+    "description": "Massive MCP collection (7260+).",
+    "kind": "directory",
+    "repo": "TensorBlock/awesome-mcp-servers"
+  },
+  {
+    "category": "MCP servers",
+    "description": "MCP servers and tools for AI model data access.",
+    "kind": "directory",
+    "repo": "habitoai/awesome-mcp-servers"
   }
 ]

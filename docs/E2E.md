@@ -1,23 +1,27 @@
 # End-to-end loop
 
-This is the “happy path” from zero to having skills visible to Deep Agents.
+This is the "happy path" from zero to having skills visible to Deep Agents and Claude Code.
 
 ## 1) Install
 ```bash
-unzip ooai-skills.zip
 cd ooai-skills
 cp .env.example .env
-# edit MinIO endpoint/keys/bucket
-pdm add -dG dev -e .
+# edit MinIO endpoint/keys/bucket if needed
+pdm install
 ```
 
-## 2) Bootstrap MinIO + verify
+## 2) Scaffold project structure
+```bash
+pdm run ooai-skills init .
+```
+Creates `.claude/` (skills, commands, agents, rules, hooks), `.agents/` (skills, rules, context, memory), `.gemini/`, `AGENTS.md`, and `.mcp.json`.
+
+## 3) Bootstrap MinIO
 ```bash
 ./scripts/bootstrap_minio.sh
-./scripts/verify.sh
 ```
 
-## 3) Ingest skill repos into MinIO (no git)
+## 4) Ingest skill repos into MinIO (no git)
 Recommended: set a GitHub token to avoid rate limits.
 
 ```bash
@@ -25,17 +29,20 @@ export OOAI_SKILLS_GITHUB_TOKEN="..."
 ./scripts/ingest_curated_zips.sh "Core general skill catalogs" "Security-focused packs"
 ```
 
-## 4) Pull to local skill directories
+## 5) Pull to local skill directories
 ```bash
 ./scripts/pull.sh
 # if you want to force copies instead of symlinks:
 ./scripts/pull.sh --copy
 ```
 
-## 5) Confirm locally + in Deep Agents
+By default, pull writes to both `~/.agents/skills/` (Deep Agents / Codex) and `~/.claude/skills/` (Claude Code).
+
+## 6) Confirm locally
 ```bash
 pdm run ooai-skills local list
-deepagents skills list
+ls ~/.agents/skills/
+ls ~/.claude/skills/
 ```
 
 ## Updating later

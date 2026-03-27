@@ -1,6 +1,9 @@
 from __future__ import annotations
-import shutil, subprocess
+
+import shutil
+import subprocess
 from pathlib import Path
+
 import requests
 
 def is_git_available() -> bool:
