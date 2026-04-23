@@ -25,8 +25,11 @@ extensions = [
     "sphinxcontrib.mermaid",
 ]
 
+root_doc = "index"
+
 autoapi_type = "python"
 autoapi_dirs = ["../src/ooai_skills"]
+autoapi_root = "autoapi"
 autoapi_options = [
     "members",
     "undoc-members",
@@ -48,8 +51,6 @@ source_suffix = {
     ".md": "markdown",
 }
 
-root_doc = "index"
-
 html_theme = "furo"
 html_title = "ooai-skills"
 html_theme_options = {
@@ -58,8 +59,6 @@ html_theme_options = {
     "source_directory": "docs/",
     "navigation_with_keys": True,
 }
-
-html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "/")
 
 napoleon_google_docstring = True
 napoleon_numpy_docstring = False
