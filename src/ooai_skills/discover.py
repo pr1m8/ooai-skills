@@ -1,4 +1,4 @@
-"""Discover skills by locating **/SKILL.md."""
+"""Discover skills by locating ``SKILL.md`` files recursively."""
 
 from __future__ import annotations
 

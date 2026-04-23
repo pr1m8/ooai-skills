@@ -8,6 +8,7 @@ __pycache__/
 .ruff_cache/
 build/
 dist/
+docs/autoapi/
 *.egg-info/
 .eggs/
 .pdm-build/

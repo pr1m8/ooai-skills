@@ -1,4 +1,4 @@
-"""Frontmatter parsing for SKILL.md."""
+"""Parse optional YAML frontmatter from ``SKILL.md`` content."""
 
 from __future__ import annotations
 
@@ -8,6 +8,8 @@ import yaml
 
 
 class ParsedFrontmatter(TypedDict):
+    """Structured result returned by :func:`parse_frontmatter`."""
+
     frontmatter: dict[str, Any]
     body: str
 

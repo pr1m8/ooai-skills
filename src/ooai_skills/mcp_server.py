@@ -1,9 +1,9 @@
 """MCP server exposing local skill browsing as tools.
 
-Run standalone:
-    python -m ooai_skills.mcp_server
+Run ``python -m ooai_skills.mcp_server`` to start the stdio server.
 
-Or configure in .mcp.json:
+Example ``.mcp.json`` entry::
+
     {
       "mcpServers": {
         "ooai-skills": {

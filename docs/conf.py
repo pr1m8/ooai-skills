@@ -15,7 +15,6 @@ release = "0.1.0"
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
-    "sphinx.ext.viewcode",
     "sphinx.ext.intersphinx",
     "sphinx_autodoc_typehints",
     "autoapi.extension",
@@ -26,6 +25,7 @@ extensions = [
 ]
 
 root_doc = "index"
+master_doc = root_doc
 
 autoapi_type = "python"
 autoapi_dirs = ["../src/ooai_skills"]
@@ -70,14 +70,20 @@ autodoc_member_order = "bysource"
 autodoc_typehints = "description"
 always_document_param_types = True
 
-intersphinx_mapping = {
-    "python": ("https://docs.python.org/3", None),
-    "pydantic": ("https://docs.pydantic.dev/latest/", None),
-}
+if os.environ.get("READTHEDOCS") == "True":
+    intersphinx_mapping = {
+        "python": ("https://docs.python.org/3", None),
+        "pydantic": ("https://pydantic.dev/docs/validation/latest/", None),
+    }
+else:
+    intersphinx_mapping = {}
 
 copybutton_prompt_text = r">>> |\.\.\. |\$ "
 copybutton_prompt_is_regexp = True
 
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+suppress_warnings = [
+    "ref.python",
+]
 html_static_path = []
